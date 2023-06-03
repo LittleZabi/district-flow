@@ -1,0 +1,65 @@
+// dialog::backdrop{
+//     background:rgba(254, 246, 246, 0.571);
+// }
+body {
+    background: black;
+    color: white;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: Inter;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: unset;
+    color: grey;
+}
+
+button {
+    outline: none;
+}
+a,button,input{
+    transition: 500ms ease-out;
+}
+input {
+    outline: none;
+    font-family: inherit;
+}
+
+.page-size {
+    max-width: 1280px;
+    margin: auto;
+}
+
+img {
+    width: 100%;
+}
+
+#root {
+    display: grid;
+    grid-template-areas: "header" "main" "footer";
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}
