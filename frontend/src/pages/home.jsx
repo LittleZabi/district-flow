@@ -1,3 +1,4 @@
+import ApplicationForm from "../components/application-form";
 import HomeMiddle from "../components/home-middle";
 import LoginForm from "../components/login-form";
 
@@ -61,6 +62,9 @@ const HomeView = () => {
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
+      </div>
+      <div className="page-size">
+      <ApplicationForm/>
       </div>
     </div>
   );

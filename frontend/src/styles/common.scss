@@ -15,7 +15,7 @@ ul {
     padding: 0;
     margin: 0;
 }
-h1,h2,h3,h4,h5{
+h1,h2,h3,h4,h5,p{
     margin:0;
 }
 li {
@@ -33,7 +33,7 @@ button {
 a,button,input{
     transition: 500ms ease-out;
 }
-input {
+input,textarea,select {
     outline: none;
     font-family: inherit;
 }

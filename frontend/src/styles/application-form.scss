@@ -1,0 +1,66 @@
+.application-form{
+    background: white;
+    border-radius: 22px;
+    margin: 35px auto;
+    line-height: 1.5;
+    font-weight: 500;
+    min-height: 400px;
+    overflow: hidden;
+    box-shadow: 4px 5px 10px 1px rgba(0, 0, 0, 0.2901960784);
+    & h2{
+        text-transform: uppercase;
+        font-size: 28px;
+        letter-spacing: 1px;
+        font-family: 'Inter';
+    }
+    & p{
+        font-size: 14px;
+        font-weight: 400;
+    }
+    & .form-right{
+        & img{
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    & .form-left{
+        padding: 13px 57px;
+        margin-left: 76px;
+        margin-top: 39px;
+        & form{
+            margin-top: 20px;
+        }
+    }
+    & .flex-yxz{
+        display: flex;
+        & .a03x{
+            display: flex;
+            flex-direction: column;
+            width: 268px;
+            margin-top: 15px;
+            margin-right: 20px;
+            &.full-w{
+                width: 100%;
+            }
+            & input{
+                height: 32px;
+                border: none;
+                border-bottom: 1px solid #00000036;
+                width: 85%;
+                &:active, &:hover{
+                    border-bottom-color: rgb(0, 255, 106);
+                }
+            }
+            & textarea{
+                width: 100%;
+                border: 2px solid #ffc4fc;
+                padding: 8px;
+                font-family: 'Inter';
+                font-size: 16px;
+                border-radius: 8px;
+                min-height: 220px;
+                background: #ffe6ee;
+            }
+        }
+    }
+}
