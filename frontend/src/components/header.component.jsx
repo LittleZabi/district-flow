@@ -6,15 +6,13 @@ const Header = () => {
         <ul>
           <li className="flex logo">
             <a href="/">
-              <img src="/images/logo.svg" alt="district flow" />
+              <img src="/images/logo.png" alt="district flow" />
             </a>
           </li>
         </ul>
         <ul className="flex links">
           <li>
-            <a href="/">
-                Home
-            </a>
+            <a href="/">Home</a>
           </li>
           <li>
             <a href="/">Application</a>
@@ -22,12 +20,10 @@ const Header = () => {
           <li>
             <a href="/">About</a>
           </li>
-        </ul>
-        <ul className="flex">
-            <li className="flex user">
-                <img src="/images/wan-shi-tong.webp" alt="" />
-                <span>LittleZabi</span>
-            </li>
+          <li className="flex user">
+            <img src="/images/wan-shi-tong.webp" alt="" />
+            <span>LittleZabi</span>
+          </li>
         </ul>
       </nav>
     </header>

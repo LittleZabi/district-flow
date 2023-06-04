@@ -2,20 +2,22 @@
 //     background:rgba(254, 246, 246, 0.571);
 // }
 body {
-    background: black;
-    color: white;
+    background: #05FF00;
+    color: black;
     padding: 0;
     margin: 0;
     scroll-behavior: smooth;
     box-sizing: border-box;
-    font-family: Inter;
+    font-family: Raleway;
 }
 
 ul {
     padding: 0;
     margin: 0;
 }
-
+h1,h2,h3,h4,h5{
+    margin:0;
+}
 li {
     list-style: none;
 }
@@ -62,4 +64,15 @@ main {
 
 footer {
     grid-area: footer;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0) inset !important;
 }

@@ -1,0 +1,85 @@
+.home-login-outer{
+    justify-content: flex-end;
+}
+.form{
+    background: #ffffff82;
+    width: 388px;
+    margin: -15px 76px 0 15px;
+    border-radius: 15px;
+    padding: 15px 33px;
+    backdrop-filter: blur(15px);
+    box-shadow: 2px 4px 9px 1px rgb(0 0 0 / 24%);
+    & h3{
+        text-align: center;
+        font-size: 27px;
+        text-transform: uppercase;
+        font-family: 'Inter';
+    }
+    & h5{
+        text-align: center;
+        font-size: 14px;
+        margin-top: 6px;
+        font-weight: 500;
+    }
+    & .form-content{
+        margin:14px auto;
+        & label{
+            font-size: 14px;
+            display: block;
+        }
+        & input{
+            display: block;
+            width: 92%;
+            margin: 7px auto;
+            background: rgba(167, 255, 198, 0.8196078431);
+            padding: 0 14px;
+            font-size: 15px;
+            font-family: Inter;
+            height: 47px;
+            border-radius: 6px;
+            border: 1px solid rgba(0, 128, 0, 0.4196078431);
+            font-weight: 500;
+            
+        }
+        & input[type='submit']{
+            margin-top: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 16px;
+            border: 2px solid #00ea00;
+            border-radius: 27px;
+            background: #ffffff75;
+            cursor: pointer;
+            &:hover{
+                background: white;
+            }
+        }
+        & .sup-8821{
+            &.m83x {
+                margin-top: 23px;
+            }
+            text-align: center;
+            display: block;
+            margin-top: 3px;
+            font-family: 'Inter';
+            font-size: 13px;
+            & a{font-weight: bold;text-decoration: underline;color:black;}
+        }
+        & .a9382nck{
+            justify-content: flex-start;
+            margin-top: 15px;
+            & input{
+                width: auto;
+                margin: 0 15px 0 4px;
+                height: auto;
+            }
+            & input, & label{
+                cursor: pointer;
+            }
+        }
+
+    }
+}
+// * {
+//     border: 1px solid green;
+// }
