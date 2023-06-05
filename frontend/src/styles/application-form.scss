@@ -183,3 +183,12 @@
         }
     }
 }
+.application-page{
+    background: linear-gradient(#CCFFAD, #73FF6A, #05FF00);
+    height: 100%;
+    width: 100%;
+    padding: 1px 0;
+    & .application-form{
+        margin-top: 100px;
+    }
+}

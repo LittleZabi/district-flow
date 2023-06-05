@@ -1,7 +1,8 @@
-.home-login-outer{
+.home-login-outer {
     justify-content: flex-end;
 }
-.form{
+
+.form {
     background: #ffffff82;
     width: 388px;
     margin: -15px 76px 0 15px;
@@ -9,25 +10,30 @@
     padding: 15px 33px;
     backdrop-filter: blur(15px);
     box-shadow: 2px 4px 9px 1px rgb(0 0 0 / 24%);
-    & h3{
+
+    & h3 {
         text-align: center;
         font-size: 27px;
         text-transform: uppercase;
         font-family: 'Inter';
     }
-    & h5{
+
+    & h5 {
         text-align: center;
         font-size: 14px;
         margin-top: 6px;
         font-weight: 500;
     }
-    & .form-content{
-        margin:14px auto;
-        & label{
+
+    & .form-content {
+        margin: 14px auto;
+
+        & label {
             font-size: 14px;
             display: block;
         }
-        & input{
+
+        & input {
             display: block;
             width: 92%;
             margin: 7px auto;
@@ -39,9 +45,10 @@
             border-radius: 6px;
             border: 1px solid rgba(0, 128, 0, 0.4196078431);
             font-weight: 500;
-            
+
         }
-        & input[type='submit']{
+
+        & input[type='submit'] {
             margin-top: 16px;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -50,36 +57,83 @@
             border-radius: 27px;
             background: #ffffff75;
             cursor: pointer;
-            &:hover{
+
+            &:hover {
                 background: white;
             }
         }
-        & .sup-8821{
+
+        & .sup-8821 {
             &.m83x {
                 margin-top: 23px;
             }
+
             text-align: center;
             display: block;
             margin-top: 3px;
             font-family: 'Inter';
             font-size: 13px;
-            & a{font-weight: bold;text-decoration: underline;color:black;}
+
+            & a {
+                font-weight: bold;
+                text-decoration: underline;
+                color: black;
+            }
         }
-        & .a9382nck{
+
+        & .a9382nck {
             justify-content: flex-start;
             margin-top: 15px;
-            & input{
+
+            & input {
                 width: auto;
                 margin: 0 15px 0 4px;
                 height: auto;
             }
-            & input, & label{
+
+            & input,
+            & label {
                 cursor: pointer;
             }
         }
 
     }
 }
-// * {
-//     border: 1px solid green;
-// }
+
+.sign-page {
+    background: linear-gradient(#CCFFAD, #73FF6A, #05FF00);
+    height: 100%;
+    width: 100%;
+    padding: 1px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & .form {
+        margin-top: 100px;
+        margin-bottom: 40px;
+    }
+
+    & .application-form {
+        max-width: 748px;
+        background: #ffffffab;
+        margin: 99px auto;
+        margin-bottom: 40px;
+
+        & .form-left {
+            padding: 13px 57px;
+            margin-left: 8px;
+            margin-top: 39px;
+        }
+        & .a03x{
+            width: 50% !important;
+            &.full-w{
+                width: 100% !important;
+            }
+        }
+        & .a03x input, & .a03x select{
+            width: 100% !important;
+            background: none;
+        }
+    }
+}
