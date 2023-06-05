@@ -8,11 +8,11 @@ const LoginForm = () => {
           communities, and efficient governance.
         </h5>
         <div className="form-content">
-          <label htmlFor="email">Enter username of email address</label>
+          <label htmlFor="user-email">Enter username of email address</label>
           <input
             type="email"
             name="email"
-            id="email"
+            id="user-email"
             placeholder="Eg: john / johndoe@example.com"
           />
           <label htmlFor="password">Enter your password</label>
@@ -22,13 +22,13 @@ const LoginForm = () => {
             id="password"
             placeholder="minimum 8 characters password!"
           />
-          <div class="flex a9382nck">
+          <div className="flex a9382nck">
             <input
               type="checkbox"
               name="keep-me-logged"
               id="check-box"
             />
-            <label for="check-box">Keep me logged!</label>
+            <label htmlFor="check-box">Keep me logged!</label>
           </div>
           <input type="submit" value="Sign In" />
           <span className="m83x sup-8821">

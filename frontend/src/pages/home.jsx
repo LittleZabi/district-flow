@@ -3,8 +3,6 @@ import HomeMiddle from "../components/home-middle";
 import LoginForm from "../components/login-form";
 
 const HomeView = () => {
-  const list = [1, 2, 3, 4];
-  console.log(list.at(-1));
   return (
     <div>
       {/* <dialog id="d">
@@ -59,9 +57,9 @@ const HomeView = () => {
           </p>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.158471546285!2d73.02243167495813!3d34.6759496845418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38de75bbe2e01507%3A0x700f4ad9b65581cf!2sDeputy%20Commissioner%20Office%20-%20Battagram!5e0!3m2!1sen!2s!4v1685877311219!5m2!1sen!2s"
-            allowfullscreen=""
+            allowFullScreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
       </div>
