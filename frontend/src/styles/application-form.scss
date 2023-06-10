@@ -7,6 +7,7 @@
     min-height: 400px;
     overflow: hidden;
     box-shadow: 4px 5px 10px 1px rgba(0, 0, 0, 0.2901960784);
+    max-width: 90%;
 
     & .selected-files-list {
         display: flex;
@@ -16,7 +17,7 @@
 
         & span {
             display: flex;
-            font-family: inter, Raleway, arial;
+            font-family: $s-fonts;
             font-size: 12px;
             border: 1px solid #7aff00;
             background: rgba(6, 252, 129, 0.2392156863);
@@ -93,7 +94,7 @@
         text-transform: uppercase;
         font-size: 28px;
         letter-spacing: 1px;
-        font-family: 'Inter';
+        font-family: $s-fonts;
     }
 
     & p {
@@ -157,7 +158,7 @@
                 width: 100%;
                 border: 2px solid #ffc4fc;
                 padding: 8px;
-                font-family: 'Inter';
+                font-family: $s-fonts;
                 font-size: 16px;
                 border-radius: 8px;
                 min-height: 220px;
@@ -176,19 +177,39 @@
         font-size: 14px;
         font-weight: 500;
         letter-spacing: 1px;
-        font-family: 'Inter';
+        font-family: $s-fonts;
         cursor: pointer;
         &:hover{
             background: #002dff;
         }
     }
 }
-.application-page{
-    background: linear-gradient(#CCFFAD, #73FF6A, #05FF00);
+.application-page, .sing-out-outer{
+    background: $linear-bg;
     height: 100%;
     width: 100%;
     padding: 1px 0;
     & .application-form{
         margin-top: 100px;
+    }
+}
+.application-form.sign-out{
+    & .form-right{
+        padding: 49px 69px;
+        background: #ff58001a;
+        & h3{
+            font-size: 26px;
+            font-family: $s-fonts;
+        }
+        & p{
+            margin: 18px 0px;
+        }
+        & ul{
+            margin-top: 30px;
+        }
+        & li{
+            margin-top: 10px;
+            list-style: circle;
+        }
     }
 }

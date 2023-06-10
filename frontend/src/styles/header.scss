@@ -2,6 +2,8 @@ header {
     height: 65px;
     background: #CCFFAD;
 
+
+
     & nav {
         height: 100%;
         align-items: center;
@@ -15,6 +17,7 @@ header {
     & .links {
         margin: 0 20px;
         align-items: center;
+
         & a {
             font-size: 14px;
             margin: 0px 6px;
@@ -24,7 +27,8 @@ header {
             font-family: Inter;
             padding: 7px 17px;
 
-            &:hover, &.active {
+            &:hover,
+            &.active {
                 background: #00800033;
             }
         }
@@ -41,6 +45,7 @@ header {
     & .user {
         align-items: center;
         margin: 0 14px 0px 52px;
+
         & span {
             margin-left: 8px;
             color: black;
@@ -54,6 +59,22 @@ header {
             border-radius: 50%;
             border: 2px solid rgb(167, 167, 167);
             object-fit: cover;
+        }
+    }
+}
+
+header.admin-header {
+
+    background: white;
+
+    & .links {
+        & a {
+            border-radius: 6px;
+
+            &:hover,
+            & a.active {
+                background: rgb(0 0 0 / 10%);
+            }
         }
     }
 }

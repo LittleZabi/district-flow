@@ -5,7 +5,7 @@
 .form {
     background: #ffffff82;
     width: 388px;
-    margin: -15px 76px 0 15px;
+    margin: 1px 76px 0 15px;
     border-radius: 15px;
     padding: 15px 33px;
     backdrop-filter: blur(15px);
@@ -33,7 +33,7 @@
             display: block;
         }
 
-        & input {
+        & input, & select {
             display: block;
             width: 92%;
             margin: 7px auto;
@@ -45,7 +45,14 @@
             border-radius: 6px;
             border: 1px solid rgba(0, 128, 0, 0.4196078431);
             font-weight: 500;
-
+        }
+        & select{
+            margin: 7px 0;
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid rgba(0, 128, 0, 0.4196078431);
+            border-radius: 0;
+            cursor: pointer;
         }
 
         & input[type='submit'] {
@@ -108,12 +115,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
     & .form {
         margin-top: 100px;
         margin-bottom: 40px;
     }
-
     & .application-form {
         max-width: 748px;
         background: #ffffffab;

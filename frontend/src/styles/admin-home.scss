@@ -1,0 +1,32 @@
+#admin-view{
+    margin: 20px 5px;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-direction: row;
+    & .inner-admin{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 100%;
+        padding: 0 10px;
+        flex-wrap: nowrap;
+        & .left, & .right{
+            background: white;
+            height: 100%;
+            border-radius: 8px;
+            box-shadow: 1px 2px 9px 1px #00000012;
+        }
+        & .left{
+            width: 24%;
+        }
+        & .right{
+            padding: 10px;
+            width: 73%;
+        }
+    }
+    & .manager-login{
+        margin: 40px auto;
+        background: white;
+    }
+}

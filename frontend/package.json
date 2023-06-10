@@ -2,6 +2,7 @@
   "name": "frontend",
   "private": true,
   "version": "0.0.0",
+  "proxy": "http://localhost:5000",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,8 +12,11 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
+    "axios": "^1.4.0",
+    "http-proxy-middleware": "^1.0.6",
     "node-sass": "^9.0.0",
     "react": "^18.2.0",
+    "react-cookie": "^4.1.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",
     "sass": "^1.62.1"

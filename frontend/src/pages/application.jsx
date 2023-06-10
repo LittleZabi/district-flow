@@ -1,9 +1,10 @@
 import ApplicationForm from "../components/application-form"
 
-const Application = ()=>{
+const Application = ({user})=>{
+
     return <div className="application-page">
         <div className="page-size" >
-            <ApplicationForm/>
+            <ApplicationForm user={user}/>
         </div>
     </div>
 }

@@ -5,9 +5,9 @@ import { NavLink } from "react-router-dom";
 // useEffect(()=>{
 
 // })
-const Header = ({ user }) => {
+const HeaderAdmin = ({ user }) => {
   return (
-    <header>
+    <header className="admin-header">
       <nav className="flex page-size">
         <ul>
           <li className="flex logo">
@@ -17,33 +17,6 @@ const Header = ({ user }) => {
           </li>
         </ul>
         <ul className="flex links">
-          <li>
-            <NavLink to="/" exactclassname="active">
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink activeclassname="active" to="/application">
-              Application
-            </NavLink>
-          </li>
-          <li>
-            <NavLink activeclassname="active" to="/history">
-              My History
-            </NavLink>
-          </li>
-          {!user && (
-            <li>
-              <NavLink activeclassname="active" to="/sign-up">
-                Sign Up
-              </NavLink>
-            </li>
-          )}
-          <li>
-            <NavLink activeclassname="active" to="/about">
-              About
-            </NavLink>
-          </li>
           {user && (
             <li>
               <NavLink activeclassname="active" to="/sign-out">
@@ -78,4 +51,4 @@ const Header = ({ user }) => {
     </header>
   );
 };
-export default Header;
+export default HeaderAdmin;

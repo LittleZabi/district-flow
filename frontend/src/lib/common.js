@@ -22,3 +22,9 @@ export const trimTitle = (
   } else _ = title;
   return _;
 };
+
+export const createForm = (obj_) => {
+  const form = new FormData();
+  for (const item in obj_) form.append(item, obj_[item]);
+  return form;
+};

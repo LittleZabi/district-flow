@@ -1,10 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import LoginForm from "./login-form";
 
 const HomeMiddle = () => {
+  const navigate = useNavigate()
   return (
     <div className="middle-view">
       <div className="page-size flex">
-        <div className="mid-left">
+        <div className="fade-in mid-left">
           <h1>Welcome to DistrictFlow</h1>
           <h3>Empowering Citizens</h3>
           <p>
@@ -13,9 +15,9 @@ const HomeMiddle = () => {
             Transforming Administrative Processes for a Connected and Efficient
             Future!
           </p>
-          <button className="new-app-btn">New Application</button>
+          <button onClick={()=>navigate('/application')} className="new-app-btn">New Application</button>
         </div>
-        <div className="flex mid-right">
+        <div className="fade-in flex mid-right">
           <img src="/images/bg-1.png" alt="" />
         </div>
       </div>
