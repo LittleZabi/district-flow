@@ -16,15 +16,19 @@ const HeaderAdmin = ({ user }) => {
         <ul className="flex links">
           {user && (
             <li>
-              <NavLink
-                activeclassname="active"
-                to="/sign-out"
+              <button
                 className="flex"
-                style={{ alignItems: "center" }}
+                style={{
+                  alignItems: "center",
+                  border: "none",
+                  background: "none",
+                  cursor: "pointer",
+                }}
+                onClick={()=>{sessionStorage.removeItem("manager");window.location.href='/admin'}}
               >
                 <ArrowLeftOnRectangleIcon width={25} />
                 <span style={{ marginLeft: 5 }}>Logout</span>
-              </NavLink>
+              </button>
             </li>
           )}
 
@@ -34,7 +38,9 @@ const HeaderAdmin = ({ user }) => {
                 <img src="/images/wan-shi-tong.webp" alt="" />
                 <div>
                   <span>{user.fullname}</span>
-                  <span className="font-size-12 a83ksdf">{user.department}</span>
+                  <span className="font-size-12 a83ksdf">
+                    {user.department}
+                  </span>
                 </div>
               </li>
             </>

@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
+import { API_URI } from "../lib/constants";
 
 const Settings = ({ settings }) => {
   const [newDept, setNewDept] = useState("");
+  const [message, setMessage] = useState(false);
   const [departments, setDepartments] = useState([]);
   const [newSub, setNewSub] = useState([]);
   const [subjects, setSubjects] = useState([]);
@@ -21,13 +24,29 @@ const Settings = ({ settings }) => {
     const n = subjects.filter((e, i) => i !== a);
     setSubjects(n);
   };
+  const saveForm = async () => {
+    await axios
+      .post(API_URI + "settings/save", {
+        departments,
+        subjects,
+        id: settings._id,
+      })
+      .then((res) => {
+        setMessage({ message: "Setting successfully saved!" });
+      })
+      .catch((e) => {
+        console.error(e);
+      });
+  };
   useEffect(() => {
     setDepartments(settings.departments);
     setSubjects(settings.subjects);
   }, [settings]);
   return (
     <div>
-      <h1 className="form-title">Change Settings <br/></h1>
+      <h1 className="form-title">
+        Change Settings <br />
+      </h1>
       <div className="departments">
         <h3>Change applications department status settings</h3>
         <div className="flex a983823">
@@ -86,8 +105,14 @@ const Settings = ({ settings }) => {
           </button>
         </div>
       </div>
+      {message && (
+        <div
+          dangerouslySetInnerHTML={{ __html: message.message }}
+          className={`message ${message.variant}`}
+        />
+      )}
       <div className="flex a992kc">
-        <button>Save Settings</button>
+        <button onClick={saveForm}>Save Settings</button>
       </div>
     </div>
   );

@@ -22,6 +22,10 @@ app.get("/api/settings", async (req, res) => {
   console.log(2123123, setting)
   res.send(setting);
 });
+app.post("/api/settings/save", async (req, res) => {
+  const setting = await Settings.updateOne({ _id: req.body.id }, {$set: {departments: req.body.departments, subjects: req.body.subjects}});
+  res.send('success');
+});
 app.get("/api/", (req, res) => {
   res.send(
     "it's look like you are accessing API without frontend requests. this only work on react frontend app."

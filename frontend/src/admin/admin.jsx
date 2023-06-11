@@ -14,12 +14,13 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { API_URI } from "../lib/constants";
 import Settings from "./settings";
+import { useCookies } from "react-cookie";
 
 const Admin = () => {
   document.body.style = "background:#03a9f40f";
   const manager = JSON.parse(sessionStorage.getItem("manager"));
   const [settings, setSettings] = useState({ subjects: [],departments: [] });
-
+  const [cookies] = useCookies(['user'])
   useEffect(() => {
     axios
       .get(API_URI + "settings")
@@ -50,7 +51,7 @@ const Admin = () => {
                   />
                   <Route path="/users" element={<UsersList />} />
                   <Route path="/managers" element={<ManagersList />} />
-                  <Route path="/add-new" element={<AddNewManager />} />
+                  <Route path="/add-new" element={<AddNewManager user={cookies.user} />} />
                   <Route path="/settings" element={<Settings settings={settings} />} />
                 </Routes>
               </div>
