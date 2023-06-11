@@ -4,6 +4,13 @@ import { Managers } from "../db/models.js";
 import bcrypt from "bcryptjs";
 
 const managerRouter = express.Router();
+managerRouter.get(
+  "/all",
+  expressAsyncHandler(async (req, res) => {
+    const items = await Managers.find({}, {password: 0})
+    res.send(items)
+  })
+);
 managerRouter.post(
   "/login",
   expressAsyncHandler(async (req, res) => {
@@ -31,11 +38,9 @@ managerRouter.post(
         return 0;
       })
       .catch((e) => {
-        res
-          .status(500)
-          .send({
-            message: `error occured during fetching admin from db!. (ERROR) ${e}`,
-          });
+        res.status(500).send({
+          message: `error occured during fetching admin from db!. (ERROR) ${e}`,
+        });
         return 0;
       });
   })

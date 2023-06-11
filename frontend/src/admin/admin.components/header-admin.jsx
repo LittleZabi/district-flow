@@ -1,10 +1,7 @@
 // import {Icon, home} from '@heroicons'
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-// const [user, setUser] = useState()
-// useEffect(()=>{
-
-// })
+import { ArrowLeftOnRectangleIcon } from "@heroicons/react/24/solid";
 const HeaderAdmin = ({ user }) => {
   return (
     <header className="admin-header">
@@ -19,8 +16,14 @@ const HeaderAdmin = ({ user }) => {
         <ul className="flex links">
           {user && (
             <li>
-              <NavLink activeclassname="active" to="/sign-out">
-                Logout
+              <NavLink
+                activeclassname="active"
+                to="/sign-out"
+                className="flex"
+                style={{ alignItems: "center" }}
+              >
+                <ArrowLeftOnRectangleIcon width={25} />
+                <span style={{ marginLeft: 5 }}>Logout</span>
               </NavLink>
             </li>
           )}
@@ -29,7 +32,10 @@ const HeaderAdmin = ({ user }) => {
             <>
               <li className="flex user">
                 <img src="/images/wan-shi-tong.webp" alt="" />
-                <span>{user.firstname}</span>
+                <div>
+                  <span>{user.fullname}</span>
+                  <span className="font-size-12 a83ksdf">{user.department}</span>
+                </div>
               </li>
             </>
           ) : (
@@ -39,7 +45,7 @@ const HeaderAdmin = ({ user }) => {
                 <NavLink
                   activeclassname="active"
                   style={{ margin: 0 }}
-                  to="/sign-in"
+                  to="/admin"
                 >
                   Sign In
                 </NavLink>

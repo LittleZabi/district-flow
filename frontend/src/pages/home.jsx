@@ -56,7 +56,7 @@ const HomeView = ({ user }) => {
         <div className="fade-in home-x3">
           <div className="sup0333">
             <p>
-              Welcome to the District Officer Website! Experience the
+              <h2>Welcome to the District Officer Website!</h2> Experience the
               convenience of our online platform, designed exclusively for
               citizens like you. Submit your applications, letters, and requests
               directly to the District Officer (DC) with just a few clicks. Say

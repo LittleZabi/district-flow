@@ -9,11 +9,24 @@
 .font-2{
     font-family: Inter;
 }
+.a83ksdf{
+    font-weight: 500 !important;
+    color: #606060 !important;
+    display: block;
+}
 .font-size-12{
     font-size: 12px;
 }
 .font-size-14{
     font-size: 14px;
+}
+.selector{
+    width: 200px;
+    border: none;
+    border-bottom: 1px solid #00000026;
+    margin: 10px 10px 4px 20px;
+    padding: 4px;
+    cursor: pointer;
 }
 .loading-spinner{
     width: 40px;

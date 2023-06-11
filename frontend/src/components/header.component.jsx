@@ -27,11 +27,11 @@ const Header = ({ user }) => {
               Application
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink activeclassname="active" to="/history">
               My History
             </NavLink>
-          </li>
+          </li> */}
           {!user && (
             <li>
               <NavLink activeclassname="active" to="/sign-up">

@@ -5,7 +5,8 @@ import db from "./db/connection.js";
 import bcrypt from "bcryptjs";
 import { Applications, Settings, Users } from "./db/models.js";
 import { upload } from "./lib/setup.js";
-import managerRouter from './routers/managersRouter.js'
+import managerRouter from "./routers/managersRouter.js";
+import applicationRouter from "./routers/applicationRouter.js";
 
 await db.connect();
 const app = express();
@@ -13,10 +14,12 @@ app.use(cors());
 app.use(express.json());
 const port = process.env.PORT;
 
-app.use('/api/manager', managerRouter)
+app.use("/api/manager", managerRouter);
+app.use("/api/application", applicationRouter);
 
-app.get("/api/settings", async(req, res) => {
-  const setting = await Settings.findOne({activeSetting: true})
+app.get("/api/settings", async (req, res) => {
+  const setting = await Settings.findOne({ activeSetting: true });
+  console.log(2123123, setting)
   res.send(setting);
 });
 app.get("/api/", (req, res) => {
@@ -27,15 +30,22 @@ app.get("/api/", (req, res) => {
 
 app.post("/api/form/add", upload.array("file"), async (req, res) => {
   let files = [];
-  req.files.map((file) => files.push("uploads/" + file.filename));
-  const addForm = new Applications({ ...req.body, files })
-  await addForm.save().then(suc => {
-    res.send({success: true})
-    return 1
-  }).catch(e => {
-    res.status(500).send({success: false, error: e})
-    return 0
-  })
+  req.files.map((file) => files.push("/uploads/" + file.filename));
+  const addForm = new Applications({
+    ...req.body,
+    files,
+    status: "processing",
+  });
+  await addForm
+    .save()
+    .then((suc) => {
+      res.send({ success: true });
+      return 1;
+    })
+    .catch((e) => {
+      res.status(500).send({ success: false, error: e });
+      return 0;
+    });
 });
 
 app.get("/api/user/fetch", async (req, res) => {
@@ -59,7 +69,7 @@ app.post("/api/user/login", async (req, res) => {
     { firstname: 1, lastname: 1, email: 1, password: 1, admin: 1 }
   );
   if (user) {
-    console.log(user)
+    console.log(user);
     if (bcrypt.compareSync(password, user.password)) {
       res.send({
         message: "Successfully Login!",
@@ -68,7 +78,7 @@ app.post("/api/user/login", async (req, res) => {
           firstname: user.firstname,
           lastname: user.lastname,
           email: user.email,
-          admin: user.admin
+          admin: user.admin,
         },
       });
     } else
@@ -84,11 +94,15 @@ app.post("/api/user/login", async (req, res) => {
     });
 });
 
+app.get("/api/user/all", async (req, res) => {
+  const users = await Users.find({}, {address: 0, password: 0, updatedAt: 0})
+  res.send(users)
+});
 app.post("/api/user/add", async (req, res) => {
   delete req.body.repassword;
   const add = new Users({
     ...req.body,
-    password: bcrypt.hashSync(req.body.password, 8)
+    password: bcrypt.hashSync(req.body.password, 8),
   });
   await add
     .save()
@@ -100,7 +114,7 @@ app.post("/api/user/add", async (req, res) => {
           firstname: add.firstname,
           lastname: add.lastname,
           email: add.email,
-          admin: add.admin
+          admin: add.admin,
         },
       });
     })

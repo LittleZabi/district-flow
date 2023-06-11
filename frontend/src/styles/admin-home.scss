@@ -11,22 +11,61 @@
         width: 100%;
         padding: 0 10px;
         flex-wrap: nowrap;
+        align-items: flex-start;
         & .left, & .right{
             background: white;
-            height: 100%;
             border-radius: 8px;
             box-shadow: 1px 2px 9px 1px #00000012;
         }
         & .left{
             width: 24%;
+            min-height: 430px;
+            height: 535px;
         }
         & .right{
-            padding: 10px;
+            padding: 0 10px;
             width: 73%;
+            height: 100%;
         }
     }
     & .manager-login{
         margin: 40px auto;
         background: white;
     }
+}
+.char-flex{
+    & div{
+        width: 100%;
+        margin: 15px;
+    }
+}
+table{
+    width: 100%;
+    cursor: pointer;
+    & td, & th{
+        border-bottom: 1px solid rgba(72, 255, 0, 0.335);
+        padding: 20px 6px;
+        font-size: 14px;
+        font-family: $s-fonts;
+        text-align: left;
+    }
+    & th{
+        text-transform: capitalize;
+        font-weight: 500;
+    }
+    & tr{
+        transition: 300ms;
+        &:nth-child(even), &:hover{
+            background-color: rgb(72 255 0 / 7%);
+        }
+        &:hover{
+            background-color: #008dff14;
+        }
+    }
+}
+.form-title{
+    margin: 25px 12px 5px 8px;
+    font-weight: 500;
+    font-size: 27px;
+    font-family: 'Inter';
 }

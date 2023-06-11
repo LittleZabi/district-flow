@@ -1,0 +1,149 @@
+.view-application {
+    padding: 20px 15px;
+
+    & .view-inner {
+        & h3 {
+            font-size: 28px;
+            text-transform: capitalize;
+            margin: 18px 0 5px 0px;
+            font-weight: 500;
+        }
+        & p{
+            font-size: 18px;
+            line-height: 1.4;
+        }
+    }
+
+    & .profile-app {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 4px;
+        background: #00ff7014;
+        padding: 10px;
+        border-radius: 7px;
+        & span{
+            margin: 2px 0;
+            font-family: $s-fonts;
+        }
+    }
+}
+
+.comment-sec{
+    margin: 10px 0;
+    background: #0000ff0f;
+    padding: 19px 14px;
+    border-radius: 11px;
+    & .x8a3{
+        & span {
+            display: block;
+        }
+    }
+    & p{
+        margin: 10px 0;
+        font-size: 13px;
+    }
+    & .a883{
+        font-weight: bold;
+        letter-spacing: 1px;
+        font-size: 18px;
+        color: black;
+    }
+    & .all8{
+        justify-content: flex-start;
+        font-family: $s-fonts;
+        font-size: 12px;
+        & span{
+            margin: 0;
+            padding: 0 9px;
+        }
+        & span:nth-child(1){
+            padding-left: 0;
+        }
+    }
+}
+
+.departments{
+    margin: 10px;
+    & h3{
+        font-size: 17px;
+        font-weight: 500;
+        margin-top: 18px;
+    }
+    &.subjects{
+        margin-top: 20px;
+        border-top: 1px solid #00000017;
+        padding-top: 8px;
+    }
+    & .flex{
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    & .a983823{
+        margin: 9px 0;
+    }
+    & section{
+        background: #1a9aff47;
+        padding: 6px 15px;
+        border-radius: 8px;
+        text-transform: capitalize;
+        box-shadow: 2px 1px 6px 0 #0000001f;
+        margin: 2px 3px;
+        & button{
+            border:none;
+            background: none;
+            font-size: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            &:hover{
+                color: red;
+            }
+        }
+    }
+    & .input-223{
+        margin-top: 59px;
+        & input{
+            width: 200px;
+            height: 30px;
+            border-radius: 18px;
+            border: 2px solid rgb(87 87 87);
+            padding: 2px 16px;
+        }
+        & button{
+            margin: 0 10px;
+            width: 100px;
+            height: 33px;
+            border-radius: 8px;
+            background: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+            &:hover{background:#000000cf}
+        }
+    }
+}
+.a992kc{
+    justify-content: flex-end;
+    margin: 30px 20px;
+    & button{
+        width: 200px;
+        height: 45px;
+        background:#007bf4;
+        color: white;
+        font-family: $s-fonts;
+        font-weight: 500;
+        border:none;
+        border-radius: 28px;
+        cursor: pointer;
+        &:hover{
+            background: #0057ad;
+        }
+    }
+}
+.images-332{
+    margin: 10px;
+    & img{
+        width: 90%;
+        border-radius: 20px;
+        margin: 10px auto;
+    }
+}

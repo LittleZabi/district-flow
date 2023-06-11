@@ -1,5 +1,10 @@
 .side-bar{
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 95%;
+    justify-content: space-between;
+    padding-bottom: 12px;
     & .side-bar-ul{
         & a{
             display: flex;

@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-// import {Icon} from '@heroicon/react'
+import { NavLink } from "react-router-dom";
 import {
   PlusSmallIcon,
   ChartPieIcon,
@@ -7,40 +6,42 @@ import {
   UsersIcon,
   BriefcaseIcon,
   CogIcon,
-  InformationCircleIcon
+  InformationCircleIcon,
 } from "@heroicons/react/24/solid";
-// import { Icon, AnnotationIcon } from '@heroicons/react';
 const SideBar = () => {
   return (
-    <div className="side-bar">
+    <div className="fade-in side-bar">
       <ul className="side-bar-ul">
         <li>
-          <Link to="/admin/add-new">
+          <NavLink to="/admin/">
             <ChartPieIcon /> Dashboard
-          </Link>
-          <Link to="/admin/add-new">
-            <PlusSmallIcon /> Add new
-          </Link>
-          <Link to="/admin/add-new">
+          </NavLink>
+          <NavLink to="/admin/applications">
             <ClipboardDocumentListIcon /> Applications
-          </Link>
-          <Link to="/admin/add-new">
+          </NavLink>
+          <NavLink to="/admin/users">
             <UsersIcon /> Users
-          </Link>
-          <Link to="/admin/add-new">
+          </NavLink>
+          <NavLink to="/admin/managers">
             <BriefcaseIcon /> Managers
-          </Link>
+          </NavLink>
+          <NavLink to="/admin/add-new">
+            <PlusSmallIcon /> Add new manager
+          </NavLink>
         </li>
       </ul>
 
       <ul className="side-bar-ul s-x2">
-        <Link to="/admin/add-new">
+        <NavLink to="/admin/settings">
           <CogIcon /> Settings
-        </Link>
-        <Link to="/admin/add-new">
+        </NavLink>
+        <NavLink to="/admin/information">
           <InformationCircleIcon /> information
-        </Link>
-        <span>All settings directly effect client's, citizen and managers so use and update admin panel carefully.</span>
+        </NavLink>
+        <span>
+          All settings directly effect client's, citizen and managers so use and
+          update admin panel carefully.
+        </span>
       </ul>
     </div>
   );

@@ -1,16 +1,29 @@
 import { formatBytes, trimTitle, createForm } from "../lib/common";
 import { applicationFilesAllowLimit } from "../lib/constants";
 import { useState, useEffect } from "react";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import { API_URI } from "../lib/constants";
 import axios from "axios";
 import Loading from "./loading-spinner";
 const ApplicationForm = ({ user }) => {
   const [message, setMessage] = useState(false);
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   const [files, setFiles] = useState([]);
   const [form, setForm] = useState({});
-  const navigate = useNavigate()
+
+  const [settings, setSettings] = useState({ subjects: [] });
+  const navigate = useNavigate();
+  useEffect(() => {
+    console.log("sending....");
+    axios
+      .get(API_URI + "settings")
+      .then((e) => {
+        setSettings(e.data);
+      })
+      .catch((e) => {
+        console.error(e);
+      });
+  }, []);
   const getUser = async () => {
     await axios
       .get(API_URI + "user/fetch", { params: { email: user.email } })
@@ -27,31 +40,38 @@ const ApplicationForm = ({ user }) => {
   }, [user]);
   const handleForm = async (e) => {
     e.preventDefault();
-    if(e.target['subject'].value === 'not-selected'){
-      setMessage({message:'Please select application subject!', variant: 'danger'})
-      return 0
+    if (e.target["subject"].value === "not-selected") {
+      setMessage({
+        message: "Please select application subject!",
+        variant: "danger",
+      });
+      return 0;
     }
-    let formData = createForm(form)
+    let formData = createForm(form);
     files.map((file, i) => {
-      formData.append(`file`, file)
-    })
-    setMessage(false)
-    setLoading(true)
+      formData.append(`file`, file);
+    });
+    setMessage(false);
+    setLoading(true);
     await axios
-    .post(API_URI + "form/add", formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    })
-    .then((e) => {
-        setMessage({message: 'Your application successfully submitted!', variant:'success'})
-        setTimeout(() => {
-          navigate('/history')
-        }, 2000);
+      .post(API_URI + "form/add", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then((e) => {
+        setLoading(false);
+        setMessage({
+          message: "Your application successfully submitted!",
+          variant: "success",
+        });
+        // setTimeout(() => {
+        //   navigate('/')
+        // }, 2000);
       })
       .catch((e) => {
-        setLoading(false)
-        setMessage({message: e.message, variant:'danger'})
+        setLoading(false);
+        setMessage({ message: e.message, variant: "danger" });
         console.error(e);
       });
   };
@@ -236,8 +256,10 @@ const ApplicationForm = ({ user }) => {
                   required
                 >
                   <option value={"not-selected"}>Select Subject</option>
-                  <option value="option 1">option 1</option>
-                  <option value="option 2">option 2</option>
+                  {settings &&
+                    settings.subjects.map((e) => {
+                      return <option value={e}>{e}</option>;
+                    })}
                 </select>
               </div>
             </div>
@@ -293,10 +315,7 @@ const ApplicationForm = ({ user }) => {
               >
                 <span className="sp-1">Drop your files here</span>
                 <span className="sp-2">OR</span>
-                <button
-                  className="btn-1"
-                  type="button"
-                >
+                <button className="btn-1" type="button">
                   Click to select files
                 </button>
                 <input
@@ -314,9 +333,11 @@ const ApplicationForm = ({ user }) => {
               {message.message}
             </div>
           )}
-          {
-            loading ?  <Loading /> :<input type="submit" value="Submit Application" />
-          }
+          {loading ? (
+            <Loading />
+          ) : (
+            <input type="submit" value="Submit Application" />
+          )}
         </form>
       </div>
       <div className="form-right">

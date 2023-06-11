@@ -20,17 +20,17 @@ const ManagerLogin = () => {
   }, []);
   const submitForm = async (user) => {
     setLoading(true);
-    setMessage(false)
+    setMessage(false);
     await axios
       .post(API_URI + "manager/login", user)
       .then((e) => {
         setLoading(false);
-        sessionStorage.setItem('manager', JSON.stringify(e.data))
-        window.location.reload()
+        sessionStorage.setItem("manager", JSON.stringify(e.data));
+        window.location.reload();
       })
       .catch((e) => {
         setLoading(false);
-        setMessage({message: e.response.data?.message, variant: 'danger'});
+        setMessage({ message: e.response.data?.message, variant: "danger" });
         console.error(e);
       });
   };
@@ -51,7 +51,7 @@ const ManagerLogin = () => {
       setMessage({ message: "Enter your password!", variant: "alert" });
       return 0;
     }
-    submitForm({ email, password, department:dept });
+    submitForm({ email, password, department: dept });
   };
   return (
     <div className="form login-form manager-login">
@@ -63,7 +63,11 @@ const ManagerLogin = () => {
         </h5>
         <div className="form-content">
           <label htmlFor="department">Select your department</label>
-          <select name="department" id="department">
+          <select
+            style={{ background: "none" }}
+            name="department"
+            id="department"
+          >
             <option value="not-selected">Select Department</option>
             {settings.departments &&
               settings.departments.map((e, i) => {
@@ -76,6 +80,7 @@ const ManagerLogin = () => {
           </select>
           <label htmlFor="user-email">Enter your email address</label>
           <input
+            style={{ background: "none" }}
             type="email"
             name="email"
             id="user-email"
@@ -83,6 +88,7 @@ const ManagerLogin = () => {
           />
           <label htmlFor="password">Enter your password</label>
           <input
+            style={{ background: "none" }}
             type="password"
             name="password"
             id="password"

@@ -62,9 +62,9 @@ const AddNewManager = ({ user }) => {
     }
   };
   return (
-    <div className="sign-page">
+    <div className="fade-in sign-page" style={{background:'none'}}>
       <div className="page-size">
-        <div className="flex application-form">
+        <div className="flex application-form" style={{boxShadow:'none'}}>
           {user && user.admin ? (
             <>
               <div className="form-left">
