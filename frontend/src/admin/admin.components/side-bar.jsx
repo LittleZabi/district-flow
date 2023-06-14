@@ -23,7 +23,7 @@ const SideBar = () => {
             <UsersIcon /> Users
           </NavLink>
           <NavLink to="/admin/managers">
-            <BriefcaseIcon /> Managers
+            <BriefcaseIcon /> Administrators
           </NavLink>
           <NavLink to="/admin/add-new">
             <PlusSmallIcon /> Add new manager

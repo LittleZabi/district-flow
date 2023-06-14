@@ -50,7 +50,7 @@ const AddNewManager = ({ user }) => {
         })
         .then((e) => {
           setMessage({ message: "successfully created!", variant: "success" });
-          navigate("/manager");
+          navigate("/admin");
         })
         .catch((e) => {
           setMessage({
@@ -65,7 +65,7 @@ const AddNewManager = ({ user }) => {
     <div className="fade-in sign-page" style={{background:'none'}}>
       <div className="page-size">
         <div className="flex application-form" style={{boxShadow:'none', margin: 0}}>
-          {user && user.admin ? (
+         
             <>
               <div className="form-left">
                 <h2>Add new Manager</h2>
@@ -153,7 +153,7 @@ const AddNewManager = ({ user }) => {
                 </form>
               </div>
             </>
-          ) : (
+          {/* ) : (
             <div className="form-left">
               <h2>Only the super admin can add new managers.</h2>
               <h5>
@@ -163,7 +163,7 @@ const AddNewManager = ({ user }) => {
                 District Office.
               </h5>
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </div>

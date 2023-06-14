@@ -69,3 +69,33 @@ table{
     font-size: 27px;
     font-family: 'Inter';
 }
+.about-view{
+    max-width: 100%;
+    margin-top: 80px;
+    background: white;
+    padding: 10px;
+    border-radius: 14px;
+    box-shadow: 4px 6px 14px 1px #00000038;
+    & section{
+        margin: auto;
+        text-align: center;
+        margin: 20px auto;
+        & img{
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid rgb(165, 30, 255);
+            margin: auto;
+        }
+        & h2, & h3{
+            font-family: $s-fonts;
+            font-weight: 500;
+        }
+    }
+    & p{
+        padding: 10px;
+        font-size: 18px;
+        line-height: 1.4;
+    }
+}

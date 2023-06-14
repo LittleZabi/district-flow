@@ -7,26 +7,27 @@ import SignIn from "../pages/sign-in";
 import SignUp from "../pages/sign-up";
 import { useCookies } from "react-cookie";
 import SignOut from "../pages/sign-out";
+import About from "../pages/About";
 
 const Pages = () => {
   const [cookie, setCookies] = useCookies(["user"]);
   return (
     <>
-    <Header user={cookie.user} />
-    <main>
-      <Routes>
-        <Route path="/" element={<HomeView user={cookie.user} />} />
-        <Route
-          path="/application"
-          element={<Application user={cookie.user} />}
-        />
-        <Route path="/sign-in" element={<SignIn />} />
-        <Route path="/sign-up" element={<SignUp />} />
-        <Route path="/sign-out" element={<SignOut />} />
-      </Routes>
-    </main>
+      <Header user={cookie.user} />
+      <main>
+        <Routes>
+          <Route path="/" element={<HomeView user={cookie.user} />} />
+          <Route
+            path="/application"
+            element={<Application user={cookie.user} />}
+          />
+          <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/sign-out" element={<SignOut />} />
+          <Route path="/About" element={<About />} />
+        </Routes>
+      </main>
       <Footer />
-    
     </>
   );
 };

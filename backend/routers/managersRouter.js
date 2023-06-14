@@ -7,7 +7,7 @@ const managerRouter = express.Router();
 managerRouter.get(
   "/all",
   expressAsyncHandler(async (req, res) => {
-    const items = await Managers.find({}, {password: 0})
+    const items = await Managers.find({}, {password: 0}).sort('-_id')
     res.send(items)
   })
 );

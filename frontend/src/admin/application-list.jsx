@@ -36,7 +36,7 @@ const ApplicationsList = () => {
         <tbody>
           {application.map((e, i) => {
             return (
-              <tr key={i} style={e.status.toLowerCase() === 'complete' ? {background: '#2fff003d'} : {}}>
+              <tr key={i} style={e.status.toLowerCase() === 'complete' ? {background: '#2fff003d'} : e.status.toLowerCase() === 'cancelled' ? {background: '#ff000033'} : {}}>
                 <td>{++i}</td>
                 <td>{`${e.firstname}  ${e.lastname}`}</td>
                 <td>{e.email}</td>

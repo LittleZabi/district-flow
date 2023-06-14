@@ -19,7 +19,6 @@ app.use("/api/application", applicationRouter);
 
 app.get("/api/settings", async (req, res) => {
   const setting = await Settings.findOne({ activeSetting: true });
-  console.log(2123123, setting)
   res.send(setting);
 });
 app.post("/api/settings/save", async (req, res) => {

@@ -35,7 +35,7 @@ applicationRouter.get(
   "/all",
   expressAsyncHandler(async (req, res) => {
     let items = undefined;
-    if (req.query.details) items = await Applications.find({}, {}).sort("-1");
+    if (req.query.details) items = await Applications.find({}, {}).sort("-_id");
     else
       items = await Applications.find(
         {},

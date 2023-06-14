@@ -14,7 +14,6 @@ const ApplicationForm = ({ user }) => {
   const [settings, setSettings] = useState({ subjects: [] });
   const navigate = useNavigate();
   useEffect(() => {
-    console.log("sending....");
     axios
       .get(API_URI + "settings")
       .then((e) => {
@@ -40,6 +39,22 @@ const ApplicationForm = ({ user }) => {
   }, [user]);
   const handleForm = async (e) => {
     e.preventDefault();
+    setMessage(false)
+    let confirmApplication = e.target.application.value.length || files.length
+    if (!confirmApplication) {
+      setMessage({
+        message: `Type your application or Select minimum 1 and maximum ${applicationFilesAllowLimit} files.`,
+        variant: "alert",
+      });
+      return 0;
+    }
+    if(e.target.application.value.length > 0 && e.target.application.value.length < 60){
+      setMessage({
+        message: `Type application in minimum 60 characters. less then 60 characters is not allowed`,
+        variant: "alert",
+      });
+      return 0;
+    }
     if (e.target["subject"].value === "not-selected") {
       setMessage({
         message: "Please select application subject!",
@@ -273,7 +288,6 @@ const ApplicationForm = ({ user }) => {
                 id="application"
                 placeholder="Enter your full descriptive application."
                 onChange={(e) => setForm({ ...form, body: e.target.value })}
-                required
               ></textarea>
             </div>
           </div>

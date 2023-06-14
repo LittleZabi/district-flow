@@ -1,18 +1,17 @@
-// import {Icon, home} from '@heroicons'
-import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-// const [user, setUser] = useState()
-// useEffect(()=>{
 
-// })
 const Header = ({ user }) => {
   return (
     <header>
       <nav className="flex page-size">
         <ul>
           <li className="flex logo">
-            <a activeclassname="active" href="/">
+            <a class="flex active" href="/">
               <img src="/images/logo.png" alt="district flow" />
+              <div className="dkkk33k">
+                <span>Deputy Commissioner Battagram</span>
+                <span>Khyber Pakhtunkhwa</span>
+              </div>
             </a>
           </li>
         </ul>
@@ -27,11 +26,12 @@ const Header = ({ user }) => {
               Application
             </NavLink>
           </li>
-          {/* <li>
-            <NavLink activeclassname="active" to="/history">
-              My History
+          <li>
+            <NavLink activeclassname="active" to="/about">
+              About
             </NavLink>
-          </li> */}
+          </li>
+
           {!user && (
             <li>
               <NavLink activeclassname="active" to="/sign-up">
@@ -39,11 +39,7 @@ const Header = ({ user }) => {
               </NavLink>
             </li>
           )}
-          <li>
-            <NavLink activeclassname="active" to="/about">
-              About
-            </NavLink>
-          </li>
+
           {user && (
             <li>
               <NavLink activeclassname="active" to="/sign-out">
@@ -56,7 +52,7 @@ const Header = ({ user }) => {
             <>
               <li className="flex user">
                 <img src="/images/wan-shi-tong.webp" alt="" />
-                <span>{user.firstname}</span>
+                <span>{user.firstname} {user.lastname}</span>
               </li>
             </>
           ) : (

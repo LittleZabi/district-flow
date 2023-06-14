@@ -102,10 +102,7 @@ const ManagerLogin = () => {
           )}
           {loading ? <Loading /> : <input type="submit" value="Sign In" />}
           <span className="sup-8821">
-            I am not in list!{" "}
-            <Link to="/manager/add-new" className="c-danger">
-              add new manager.
-            </Link>
+            I am not in list! request to super admin to add new manager.
           </span>
         </div>
       </form>
