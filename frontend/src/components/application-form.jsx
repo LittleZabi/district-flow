@@ -39,8 +39,8 @@ const ApplicationForm = ({ user }) => {
   }, [user]);
   const handleForm = async (e) => {
     e.preventDefault();
-    setMessage(false)
-    let confirmApplication = e.target.application.value.length || files.length
+    setMessage(false);
+    let confirmApplication = e.target.application.value.length || files.length;
     if (!confirmApplication) {
       setMessage({
         message: `Type your application or Select minimum 1 and maximum ${applicationFilesAllowLimit} files.`,
@@ -48,7 +48,10 @@ const ApplicationForm = ({ user }) => {
       });
       return 0;
     }
-    if(e.target.application.value.length > 0 && e.target.application.value.length < 60){
+    if (
+      e.target.application.value.length > 0 &&
+      e.target.application.value.length < 60
+    ) {
       setMessage({
         message: `Type application in minimum 60 characters. less then 60 characters is not allowed`,
         variant: "alert",
@@ -272,8 +275,12 @@ const ApplicationForm = ({ user }) => {
                 >
                   <option value={"not-selected"}>Select Subject</option>
                   {settings &&
-                    settings.subjects.map((e) => {
-                      return <option value={e}>{e}</option>;
+                    settings.subjects.map((e, i) => {
+                      return (
+                        <option key={i} value={e}>
+                          {e}
+                        </option>
+                      );
                     })}
                 </select>
               </div>

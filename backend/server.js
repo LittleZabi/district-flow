@@ -16,7 +16,6 @@ const port = process.env.PORT;
 
 app.use("/api/manager", managerRouter);
 app.use("/api/application", applicationRouter);
-
 app.get("/api/settings", async (req, res) => {
   const setting = await Settings.findOne({ activeSetting: true });
   res.send(setting);

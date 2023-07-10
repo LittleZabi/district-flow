@@ -26,6 +26,11 @@ const Header = ({ user }) => {
               Application
             </NavLink>
           </li>
+	  <li>
+	  	<NavLink activeclassname="active" to="/my-applications">
+	  		My Applications
+	  	</NavLink>
+	  </li>
           <li>
             <NavLink activeclassname="active" to="/about">
               About

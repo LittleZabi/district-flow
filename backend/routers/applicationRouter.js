@@ -31,6 +31,11 @@ applicationRouter.get(
     res.send(items);
   })
 );
+applicationRouter.get("/client-app", expressAsyncHandler(async (req, res)=> {
+	let email = req.query.email
+	let applications = await Applications.find({email}, {__v:0, _id: 0})
+	res.send(applications)
+}))
 applicationRouter.get(
   "/all",
   expressAsyncHandler(async (req, res) => {

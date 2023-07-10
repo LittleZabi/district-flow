@@ -1,0 +1,65 @@
+.list-view {
+	background: white;
+	border-radius: 8px;
+	padding: 33px 10px;
+	margin: 10px;
+	box-shadow: 1px 2px 16px 2px #00000029;
+	min-height: 200px;
+
+	& table {
+		& tr {
+			&.complete {
+				background: #ccd0ff;
+			}
+		}
+	}
+
+	& .td-image {
+		& a {
+			background: #0080003b;
+			display: block;
+			width: max-content;
+			padding: 2px 4px;
+			border-radius: 5px;
+
+			&:hover {
+				background: #0080005b;
+			}
+		}
+
+	}
+
+	& .client-email-form {
+		display: block;
+		margin-top: 10px;
+
+		& div {
+			display: flex;
+			align-items: center;
+		}
+
+		& label {
+			font-size: 13px;
+		}
+
+		& input {
+			height: 33px;
+			width: 326px;
+			border: 1px solid #929292;
+			border-radius: 26px;
+			padding: 2px 9px;
+			margin-top: 5px;
+		}
+
+		& button {
+			height: 35px;
+			width: 100px;
+			border: 2px solid #00f100;
+			background: #05ff00;
+			font-family: $p-fonts;
+			border-radius: 22px;
+			margin-left: 10px;
+
+		}
+	}
+}

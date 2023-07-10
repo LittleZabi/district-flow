@@ -8,6 +8,7 @@ import SignUp from "../pages/sign-up";
 import { useCookies } from "react-cookie";
 import SignOut from "../pages/sign-out";
 import About from "../pages/About";
+import ListApplication from "../pages/list";
 
 const Pages = () => {
   const [cookie, setCookies] = useCookies(["user"]);
@@ -24,6 +25,10 @@ const Pages = () => {
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/sign-out" element={<SignOut />} />
+          <Route
+            path="/my-applications"
+            element={<ListApplication user={cookie.user} />}
+          />
           <Route path="/About" element={<About />} />
         </Routes>
       </main>
